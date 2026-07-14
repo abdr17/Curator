@@ -93,7 +93,7 @@ class FastTextLangId(DocumentFilter):
         elif isinstance(score, (int, float)):
             lang = None
         else :
-            msg = "score must be either a string or a list/tuple containing int score and lang code"
+            msg = "score must be either a string convertible to list or an int/float containing lang score"
             raise TypeError(msg)
         if self._lang_code:
             return score >= self._cutoff and lang == self._lang_code
