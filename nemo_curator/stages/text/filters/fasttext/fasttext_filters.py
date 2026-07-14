@@ -93,7 +93,7 @@ class FastTextLangId(DocumentFilter):
         elif isinstance(score, (list, tuple)):
             score = score[0]
             lang = score[1].upper()
-        elif isinstance(score, int):
+        elif isinstance(score, (int, float)):
             score = score
             lang = None
         else :
