@@ -90,10 +90,8 @@ class FastTextLangId(DocumentFilter):
             score_lang = eval(score)  # noqa: S307
             score = score_lang[0]
             lang = score_lang[1].upper()
-        elif isinstance(score, (int, float)):
-            lang = None
         else :
-            msg = "score must be either a string convertible to list or an int/float containing lang score"
+            msg = "score must be a string convertible to list"
             raise TypeError(msg)
         if self._lang_code:
             return score >= self._cutoff and lang == self._lang_code
